@@ -398,4 +398,11 @@ footer {
     .nav-menu {
         gap: 1rem;
     }
+    /* Hide GPT link in nav and GPT section on small screens */
+    .nav-menu li.gpt-link {
+        display: none;
+    }
+    #gpt {
+        display: none;
+    }
 }
