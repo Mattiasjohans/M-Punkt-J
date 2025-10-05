@@ -92,8 +92,8 @@ header {
 /* Hero section */
 .hero {
     /* Use a team collaboration image as the hero background */
-    /* Update hero background to use new team meeting photo */
-    background-image: url('images/hero.jpg');
+    /* Use hero image from project root */
+    background-image: url('hero.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
