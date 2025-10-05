@@ -70,7 +70,8 @@ header {
 }
 
 .logo {
-    height: 60px;
+    /* Öka logotypens storlek för att ge den mer prominence i headern */
+    height: 120px;
     width: auto;
 }
 
