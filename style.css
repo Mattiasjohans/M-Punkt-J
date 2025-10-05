@@ -1,0 +1,342 @@
+/*
+ * M Punkt J – Stylesheet
+ *
+ * Denna fil innehåller alla stilar för webbplatsen. Färger och typografi är
+ * valda för att ge ett professionellt och förtroendeingivande intryck. Layouten
+ * är responsiv och fungerar på både datorer, surfplattor och mobiler.
+ */
+
+/* Färger definierade som CSS‑variabler för enklare justering */
+:root {
+    --color-primary: #004d7a;      /* Mörkblå accentfärg */
+    --color-secondary: #0093d5;    /* Mellanblå / turkos accentfärg */
+    --color-light: #f5faff;        /* Ljus bakgrund */
+    --color-dark: #0a1f33;         /* Mörk text på ljus bakgrund */
+    --color-accent: #fdb813;       /* Accentfärg för knappar */
+    --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* Grundläggande reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--color-dark);
+    background-color: var(--color-light);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: var(--color-secondary);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* Container helper for consistent widths */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+/* Header styling */
+header {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 0.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    height: 60px;
+    width: auto;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-menu a {
+    color: white;
+    font-weight: 600;
+    transition: opacity 0.2s;
+}
+.nav-menu a:hover {
+    opacity: 0.8;
+}
+
+/* Hero section */
+.hero {
+    /* Use a team collaboration image as the hero background */
+    background-image: url('images/hero.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+/* Highlight for failure statistic at top of hero */
+.fail-highlight {
+    background-color: var(--color-accent);
+    color: var(--color-dark);
+    padding: 0.5rem 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+.fail-highlight strong {
+    font-weight: 700;
+}
+.fail-highlight span {
+    font-weight: 400;
+}
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Semi‑transparent overlay on hero image to improve text contrast */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* Primary button */
+.btn-primary {
+    background-color: var(--color-accent);
+    color: var(--color-dark);
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+    display: inline-block;
+}
+.btn-primary:hover {
+    background-color: #e5a207;
+    transform: translateY(-2px);
+}
+
+/* Section headings */
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+}
+
+/* About section */
+.about {
+    padding: 3rem 0;
+}
+.about p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+/* Services section */
+.services {
+    background-color: white;
+    padding: 3rem 0;
+}
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.service-item {
+    background-color: var(--color-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+.service-item h3 {
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+}
+
+/* Images within service items */
+.service-image {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 0.75rem;
+}
+.service-item p {
+    font-size: 0.95rem;
+}
+.service-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Project leadership section */
+.project-lead {
+    background-color: var(--color-light);
+    padding: 3rem 0;
+}
+.project-lead p {
+    max-width: 800px;
+    margin: 0 auto 1rem auto;
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* Education focus section */
+.education-focus {
+    background-color: var(--color-light);
+    padding: 3rem 0;
+    text-align: center;
+}
+.education-focus h2 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+.fact {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+.fact h3 {
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+.fact p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+.fact:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.education-focus p {
+    max-width: 800px;
+    margin: 1.5rem auto;
+    font-size: 1rem;
+}
+
+/* Contact section */
+.contact {
+    background-color: white;
+    padding: 3rem 0;
+}
+.contact-container p {
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+    text-align: center;
+    font-size: 1rem;
+}
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+.form-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+.form-row label {
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+.form-row input,
+.form-row textarea {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    resize: vertical;
+}
+.form-row input:focus,
+.form-row textarea:focus {
+    outline: none;
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 2px rgba(0, 147, 213, 0.2);
+}
+
+/* Small note styling for footnotes or källhänvisningar */
+.small-note {
+    font-size: 0.8rem;
+    color: var(--color-primary);
+    text-align: center;
+    margin-top: 0.5rem;
+}
+.small-note a {
+    color: var(--color-secondary);
+}
+.small-note a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-primary);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+.footer-container p {
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .nav-menu {
+        gap: 1rem;
+    }
+}
