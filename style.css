@@ -8,11 +8,12 @@
 
 /* Färger definierade som CSS‑variabler för enklare justering */
 :root {
-    --color-primary: #004d7a;      /* Mörkblå accentfärg */
-    --color-secondary: #0093d5;    /* Mellanblå / turkos accentfärg */
-    --color-light: #f5faff;        /* Ljus bakgrund */
-    --color-dark: #0a1f33;         /* Mörk text på ljus bakgrund */
-    --color-accent: #fdb813;       /* Accentfärg för knappar */
+    /* Färgpalett inspirerad av M Punkt J:s logo i beige och mörkblå/grå toner */
+    --color-primary: #2f3d4a;      /* Mörk basfärg för header och rubriker (djup blå/grå) */
+    --color-secondary: #cbb994;    /* Sekundär färg i beige/guld för länkar och detaljer */
+    --color-light: #f7f6ef;        /* Ljus bakgrundsfärg med varm ton */
+    --color-dark: #2a2f36;         /* Mörk textfärg för kontrast mot ljusa ytor */
+    --color-accent: #d1b864;       /* Accentfärg i guld/beige för knappar och highlights */
     --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
@@ -152,7 +153,8 @@ header {
     display: inline-block;
 }
 .btn-primary:hover {
-    background-color: #e5a207;
+    /* Mörkare variant av accentfärgen vid hover för mer djup */
+    background-color: #bfa855;
     transform: translateY(-2px);
 }
 
