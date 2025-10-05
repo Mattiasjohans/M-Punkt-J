@@ -92,7 +92,8 @@ header {
 /* Hero section */
 .hero {
     /* Use a team collaboration image as the hero background */
-    background-image: url('images/hero.png');
+    /* Update hero background to use new team meeting photo */
+    background-image: url('images/hero.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -219,6 +220,16 @@ section h2 {
     background-color: var(--color-light);
     padding: 3rem 0;
 }
+
+/* Optional image within project leadership section */
+.project-lead .project-image {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto 1.5rem auto;
+    border-radius: 8px;
+    display: block;
+}
 .project-lead p {
     max-width: 800px;
     margin: 0 auto 1rem auto;
@@ -344,6 +355,39 @@ footer {
     max-width: 800px;
     margin: 0 auto 1.5rem auto;
     font-size: 1rem;
+}
+
+/* Resources section */
+.resources {
+    background-color: white;
+    padding: 3rem 0;
+    text-align: center;
+}
+.resources h2 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+.resources p {
+    max-width: 800px;
+    margin: 0 auto 1rem auto;
+    font-size: 1rem;
+}
+.resource-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem auto;
+    max-width: 600px;
+    text-align: left;
+}
+.resource-list li {
+    margin-bottom: 0.5rem;
+}
+.resource-list a {
+    color: var(--color-secondary);
+    font-weight: 600;
+}
+.resource-list a:hover {
+    text-decoration: underline;
 }
 
 @media (max-width: 768px) {
