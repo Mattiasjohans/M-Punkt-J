@@ -45,7 +45,14 @@
                 Är du redo att påbörja eller accelerera din AI‑resa? Kontakta oss för en kostnadsfri konsultation så tar vi fram en plan
                 tillsammans. Fyll i formuläret nedan eller skicka ett e‑postmeddelande så återkommer vi inom kort.
             </p>
-            <form class="contact-form">
+            <form action="https://formsubmit.co/mattiasjohans75@gmail.com" method="POST" class="contact-form">
+                <!-- Hidden fields for Formsubmit configuration -->
+                <!-- Subject line for the email you receive -->
+                <input type="hidden" name="_subject" value="Ny förfrågan från M Punkt J webbplats">
+                <!-- Disable the default captcha on Formsubmit -->
+                <input type="hidden" name="_captcha" value="false">
+                <!-- Redirect after submission to a thank you page -->
+                <input type="hidden" name="_next" value="tack.html">
                 <div class="form-row">
                     <label for="name">Namn</label>
                     <input type="text" id="name" name="name" placeholder="Ditt namn" required>
