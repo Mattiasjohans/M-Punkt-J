@@ -69,9 +69,9 @@ header {
     justify-content: space-between;
 }
 
+/* Logotypen ska vara 50 % större än tidigare (120px → 180px) */
 .logo {
-    /* Öka logotypens storlek för att ge den mer prominence i headern */
-    height: 120px;
+    height: 180px;
     width: auto;
 }
 
