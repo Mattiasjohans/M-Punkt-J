@@ -178,6 +178,28 @@ section h2 {
     text-align: center;
 }
 
+/* About page headings */
+.about h2 {
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+.about h3 {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+.about .divider {
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 2rem auto;
+    max-width: 80%;
+}
+
 /* Services section */
 .services {
     background-color: white;
@@ -202,9 +224,11 @@ section h2 {
 }
 
 /* Images within service items */
+/* Ensure all service images have the same height and maintain aspect ratio */
 .service-image {
     width: 100%;
-    height: auto;
+    height: 250px;
+    object-fit: cover;
     border-radius: 4px;
     margin-bottom: 0.75rem;
 }
