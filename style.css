@@ -13,7 +13,8 @@
     --color-secondary: #cbb994;    /* Sekundär färg i beige/guld för länkar och detaljer */
     --color-light: #f7f6ef;        /* Ljus bakgrundsfärg med varm ton */
     --color-dark: #2a2f36;         /* Mörk textfärg för kontrast mot ljusa ytor */
-    --color-accent: #d1b864;       /* Accentfärg i guld/beige för knappar och highlights */
+    /* Justera accentfärgen till samma guldton som logotypen (för bakgrunder och knappar) */
+    --color-accent: #cbb994;       /* Accentfärg i guld/beige för knappar och highlights */
     --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
@@ -156,7 +157,8 @@ header {
 }
 .btn-primary:hover {
     /* Mörkare variant av accentfärgen vid hover för mer djup */
-    background-color: #bfa855;
+    /* Mörkare variant av accentfärgen vid hover för mer djup */
+    background-color: #ac9d7e;
     transform: translateY(-2px);
 }
 
