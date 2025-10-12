@@ -20,21 +20,22 @@
                     <li><a href="om.html">Om oss</a></li>
                     <li><a href="tjanster.html">Tjänster</a></li>
                     <li><a href="varfor-utbildning.html" class="active">Varför utbildning?</a></li>
-                    <li><a href="projektledning.html">Projektledning</a></li>
+                    <!-- Removed Projektledning link -->
                     <!-- GPT link: assign a class for responsive hiding on small screens -->
                     <li class="gpt-link"><a href="https://chat.openai.com/g/g-68e21dac1fb88191a2dbba21d73a6b41-m-punkt-j-gpt">M Punkt J GPT</a></li>
                     <li><a href="kontakt.html">Kontakt</a></li>
                 </ul>
-                <!-- Mobile dropdown navigation for small screens -->
-                <select class="mobile-menu" onchange="location=this.value;">
-                    <option value="#">Meny</option>
-                    <option value="index.html">Hem</option>
-                    <option value="om.html">Om oss</option>
-                    <option value="tjanster.html">Tjänster</option>
-                    <option value="varfor-utbildning.html">Varför utbildning?</option>
-                    <option value="projektledning.html">Projektledning</option>
-                    <option value="kontakt.html">Kontakt</option>
-                </select>
+                <!-- Hamburger menu icon for mobile -->
+                <button class="hamburger" aria-label="Öppna meny" onclick="toggleMenu()">&#9776;</button>
+                <!-- Mobile links menu -->
+                <ul class="mobile-links">
+                    <li><a href="index.html">Hem</a></li>
+                    <li><a href="om.html">Om oss</a></li>
+                    <li><a href="tjanster.html">Tjänster</a></li>
+                    <li><a href="varfor-utbildning.html" class="active">Varför utbildning?</a></li>
+                    <li><a href="https://chat.openai.com/g/g-68e21dac1fb88191a2dbba21d73a6b41-m-punkt-j-gpt" class="gpt-link">M Punkt J GPT</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
             </nav>
         </div>
     </header>
@@ -91,5 +92,14 @@
             </p>
         </div>
     </footer>
+    <!-- Navigation toggle script -->
+    <script>
+    function toggleMenu() {
+      const mobileLinks = document.querySelector('.mobile-links');
+      if (mobileLinks) {
+        mobileLinks.classList.toggle('active');
+      }
+    }
+    </script>
 </body>
 </html>

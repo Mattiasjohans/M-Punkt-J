@@ -112,8 +112,7 @@ header {
     text-align: center;
     font-size: 0.9rem;
     /* Gör texten mer framträdande än standardtypsnittet */
-    /* Increase font weight to make highlight text stand out more */
-    font-weight: 700;
+    font-weight: 600;
 }
 .fail-highlight strong {
     font-weight: 700;
@@ -437,25 +436,48 @@ footer {
 }
 
 /* Mobile navigation styles */
-.mobile-menu {
+/* Style for the hamburger icon used to toggle the mobile menu */
+.hamburger {
     display: none;
-    width: 100%;
-    padding: 0.5rem;
-    margin-top: 0.5rem;
-    background-color: var(--primary-color);
-    color: white;
+    background: none;
     border: none;
-    border-radius: 4px;
+    color: var(--color-light);
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0.25rem;
+}
+/* Container for the mobile navigation links */
+.mobile-links {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 1rem;
+    background-color: var(--color-accent);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+.mobile-links li {
+    margin: 0.5rem 0;
+}
+.mobile-links a {
+    color: var(--color-dark);
+    text-decoration: none;
     font-weight: 600;
 }
-
+/* Show the mobile menu when active */
+.mobile-links.active {
+    display: block;
+}
 @media (max-width: 768px) {
     /* Hide the regular navigation menu on small screens */
     .nav-menu {
         display: none;
     }
-    /* Show the mobile dropdown on small screens */
-    .mobile-menu {
+    /* Show the hamburger on small screens */
+    .hamburger {
         display: block;
     }
 }
