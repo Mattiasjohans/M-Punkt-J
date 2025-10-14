@@ -22,20 +22,9 @@
                     <li><a href="om.html">Om oss</a></li>
                     <li><a href="tjanster.html">Tjänster</a></li>
                     <li><a href="varfor-utbildning.html">Varför utbildning?</a></li>
-                    <!-- Removed Projektledning link: content moved under Tjänster -->
+                    <li><a href="projektledning.html">Projektledning</a></li>
                     <!-- GPT link: assign a class for responsive hiding on small screens -->
                     <li class="gpt-link"><a href="https://chat.openai.com/g/g-68e21dac1fb88191a2dbba21d73a6b41-m-punkt-j-gpt">M Punkt J GPT</a></li>
-                    <li><a href="kontakt.html">Kontakt</a></li>
-                </ul>
-                <!-- Hamburger menu icon for mobile -->
-                <button class="hamburger" aria-label="Öppna meny" onclick="toggleMenu()">&#9776;</button>
-                <!-- Mobile links menu -->
-                <ul class="mobile-links">
-                    <li><a href="index.html" class="active">Hem</a></li>
-                    <li><a href="om.html">Om oss</a></li>
-                    <li><a href="tjanster.html">Tjänster</a></li>
-                    <li><a href="varfor-utbildning.html">Varför utbildning?</a></li>
-                    <li><a href="https://chat.openai.com/g/g-68e21dac1fb88191a2dbba21d73a6b41-m-punkt-j-gpt" class="gpt-link">M Punkt J GPT</a></li>
                     <li><a href="kontakt.html">Kontakt</a></li>
                 </ul>
             </nav>
@@ -87,10 +76,10 @@
                     <p>Gartner rapporterar att 85 % av AI‑projekt misslyckas när organisationer saknar planering, utbildning och förändringsledning; framgångsrika early adopters investerar tungt i AI‑litteracitet, upskilling och reskilling.</p>
                 </div>
             </div>
-            <p>
+            <p class="lead-text">
                 Vad skiljer de som lyckas? Framgångsrika organisationer bygger AI‑kompetens brett i hela verksamheten, skapar tvärfunktionella team och kopplar AI‑initiativen till strategiska mål. De betraktar AI som ett verktyg för förändring och innovation – inte bara effektivisering.
             </p>
-            <p>
+            <p class="lead-text">
                 Utifrån dessa insikter förespråkar M Punkt J att AI‑resan startar med människorna. Utbildning och kontinuerligt kompetenslyft skapar ett gemensamt språk och en förståelse för hur AI kan användas. Genom att bygga kunskap internt kan organisationen själv ställa bättre krav på leverantörer, identifiera rätt användningsområden och driva innovation på egna villkor. Kort sagt: AI ger värde först när människor vet hur de ska använda det.
             </p>
             <p class="small-note">
@@ -124,14 +113,5 @@
             </p>
         </div>
     </footer>
-    <!-- Navigation toggle script -->
-    <script>
-    function toggleMenu() {
-      const mobileLinks = document.querySelector('.mobile-links');
-      if (mobileLinks) {
-        mobileLinks.classList.toggle('active');
-      }
-    }
-    </script>
 </body>
 </html>
