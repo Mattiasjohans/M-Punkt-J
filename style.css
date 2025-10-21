@@ -469,3 +469,9 @@ footer {
         display: block;
     }
 }
+
+/* Hide legacy mobile menu elements */
+.hamburger,
+.mobile-links {
+  display: none;
+}
