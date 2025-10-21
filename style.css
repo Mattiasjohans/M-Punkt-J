@@ -57,7 +57,7 @@ a:hover {
 header {
     background-color: var(--color-primary);
     color: white;
-    padding: 0.5rem 0;
+    padding: 0.25rem 0;
     position: sticky;
     top: 0;
     z-index: 999;
@@ -71,7 +71,7 @@ header {
 
 /* Logotypen ska vara 50 % större än tidigare (120px → 180px) */
 .logo {
-    height: 180px;
+    height: 150px;
     width: auto;
 }
 
