@@ -12,10 +12,14 @@
 <body>
     <header>
         <div class="container header-container">
-            <a href="index.html" class="logo-link" title="Till startsidan">
+    
+       
+<a href="index.html" class="logo-link" title="Till startsidan">
                 <img src="logo.png" alt="M Punkt J logo" class="logo">
             </a>
-            <nav>
+     
+                <button class="menu-toggle" aria-label="\u00d6ppna navigation" aria-expanded="false">&#9776;</button>
+<nav>
                 <ul class="nav-menu">
                     <li><a href="om.html" class="active">Om oss</a></li>
                     <li><a href="tjanster.html">Tjänster</a></li>
@@ -100,6 +104,16 @@
         mobileLinks.classList.toggle('active');
       }
     }
+    </script>
+</script>
+        <script>
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+      menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('open');
+        const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+        menuToggle.setAttribute('aria-expanded', !expanded);
+      });
     </script>
 </body>
 </html>
