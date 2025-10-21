@@ -17,6 +17,7 @@
             <a href="index.html" class="logo-link" title="Till startsidan">
                 <img src="logo.png" alt="M Punkt J logo" class="logo">
             </a>
+                <button class="menu-toggle" aria-label="Öppna navigation" aria-expanded="false">&#9776;</button>
             <nav>
                 <ul class="nav-menu">
                     <li><a href="om.html">Om oss</a></li>
@@ -113,5 +114,14 @@
             </p>
         </div>
     </footer>
-</body>
+<    <script>
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+      menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('open');
+        const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+        menuToggle.setAttribute('aria-expanded', !expanded);
+      });
+    </script>
+    /body>
 </html>
