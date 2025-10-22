@@ -1,523 +1,189 @@
-/*
- * M Punkt J – Stylesheet
- *
- * Denna fil innehåller alla stilar för webbplatsen. Färger och typografi är
- * valda för att ge ett professionellt och förtroendeingivande intryck. Layouten
- * är responsiv och fungerar på både datorer, surfplattor och mobiler.
- */
+/* ===========================
+   M PUNKT J – Global Styles
+   =========================== */
 
-/* Färger definierade som CSS‑variabler för enklare justering */
 :root {
-    /* Färgpalett inspirerad av M Punkt J:s logo i beige och mörkblå/grå toner */
-    --color-primary: #2f3d4a;      /* Mörk basfärg för header och rubriker (djup blå/grå) */
-    --color-secondary: #cbb994;    /* Sekundär färg i beige/guld för länkar och detaljer */
-    --color-light: #f7f6ef;        /* Ljus bakgrundsfärg med varm ton */
-    --color-dark: #2a2f36;         /* Mörk textfärg för kontrast mot ljusa ytor */
-    --color-accent: #d1b864;       /* Accentfärg i guld/beige för knappar och highlights */
-    --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --color-primary: #2f3d4a;
+  --color-secondary: #cbb994;
+  --color-light: #f7f6ef;
+  --color-dark: #2a2f36;
+  --color-accent: #d1b864;
+  --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-/* Grundläggande reset */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-    font-family: var(--font-family);
-    line-height: 1.6;
-    color: var(--color-dark);
-    background-color: var(--color-light);
+  font-family: var(--font-family);
+  line-height: 1.6;
+  color: var(--color-dark);
+  background-color: var(--color-light);
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
+img { max-width: 100%; height: auto; display: block; }
 
-a {
-    color: var(--color-secondary);
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: underline;
-}
+a { color: var(--color-secondary); text-decoration: none; }
+a:hover { text-decoration: underline; }
 
-/* Container helper for consistent widths */
 .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem 0;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 0;
 }
 
-/* Header styling */
-header {
-    background-color: var(--color-primary);
-    color: white;
-    padding: 0.15rem 0;
-    position: sticky;
-    top: 0;
-    z-index: 999;
-}
+/* ===========================
+   Header / Nav
+   =========================== */
 
-.header-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-/* Logotypen ska vara 50 % större än tidigare (120px → 180px) */
-.logo {
-    height: 180px;
-    width: auto;
-}
-
-.nav-menu {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-}
-
-.nav-menu a {
-    color: white;
-    font-weight: 600;
-    transition: opacity 0.2s;
-}
-.nav-menu a:hover {
-    opacity: 0.8;
-}
-
-/* Hero section */
-.hero {
-    /* Use a team collaboration image as the hero background */
-    /* Use hero image from project root */
-    background-image: url('hero.jpg');
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    color: white;
-    padding: 4rem 0;
-    text-align: center;
-}
-
-/* Highlight for failure statistic at top of hero */
-.fail-highlight {
-    background-color: var(--color-accent);
-    color: var(--color-dark);
-    padding: 0.5rem 1rem;
-    text-align: center;
-    font-size: 0.9rem;
-}
-.fail-highlight strong {
-    font-weight: 700;
-}
-.fail-highlight span {
-    font-weight: 400;
-}
-.hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
-}
-
-/* Semi‑transparent overlay on hero image to improve text contrast */
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 1;
-}
-.hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-}
-
-/* Primary button */
-.btn-primary {
-    background-color: var(--color-accent);
-    color: var(--color-dark);
-    padding: 0.75rem 1.5rem;
-    border-radius: 4px;
-    font-weight: 600;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s, transform 0.2s;
-    display: inline-block;
-}
-.btn-primary:hover {
-    /* Mörkare variant av accentfärgen vid hover för mer djup */
-    background-color: #bfa855;
-    transform: translateY(-2px);
-}
-
-/* Section headings */
-section h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: var(--color-primary);
-}
-
-/* About section */
-.about {
-    padding: 3rem 0;
-}
-.about p {
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 1.1rem;
-    text-align: center;
-}
-
-/* About page headings */
-.about h2 {
-    font-size: 2rem;
-    color: var(--color-primary);
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
-    text-align: center;
-}
-.about h3 {
-    font-size: 1.5rem;
-    color: var(--color-primary);
-    margin-top: 2rem;
-    margin-bottom: 0.5rem;
-    text-align: center;
-}
-.about .divider {
-    height: 1px;
-    background-color: #e0e0e0;
-    margin: 2rem auto;
-    max-width: 80%;
-}
-
-/* Services section */
-.services {
-    background-color: white;
-    padding: 3rem 0;
-}
-.service-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-.service-item {
-    background-color: var(--color-light);
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s, box-shadow 0.3s;
-}
-.service-item h3 {
-    margin-bottom: 0.5rem;
-    color: var(--color-primary);
-}
-
-/* Images within service items */
-/* Ensure all service images have the same height and maintain aspect ratio */
-.service-image {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 4px;
-    margin-bottom: 0.75rem;
-}
-.service-item p {
-    font-size: 0.95rem;
-}
-.service-item:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Project leadership section */
-.project-lead {
-    background-color: var(--color-light);
-    padding: 3rem 0;
-}
-
-/* Optional image within project leadership section */
-.project-lead .project-image {
-    max-width: 500px;
-    width: 100%;
-    height: auto;
-    margin: 0 auto 1.5rem auto;
-    border-radius: 8px;
-    display: block;
-}
-.project-lead p {
-    max-width: 800px;
-    margin: 0 auto 1rem auto;
-    font-size: 1rem;
-    text-align: center;
-}
-
-/* Education focus section */
-.education-focus {
-    background-color: var(--color-light);
-    padding: 3rem 0;
-    text-align: center;
-}
-.education-focus h2 {
-    color: var(--color-primary);
-    margin-bottom: 1rem;
-}
-.facts-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-.fact {
-    background-color: white;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s, box-shadow 0.3s;
-}
-.fact h3 {
-    color: var(--color-primary);
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-}
-.fact p {
-    font-size: 0.9rem;
-    line-height: 1.4;
-}
-.fact:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.education-focus p {
-    max-width: 800px;
-    margin: 1.5rem auto;
-    font-size: 1rem;
-}
-
-/* Enlarge key insight paragraphs on the education focus section by 50% */
-.education-focus .lead-text {
-    font-size: 1.5rem;
-    line-height: 1.6;
-}
-
-/* Contact section */
-.contact {
-    background-color: white;
-    padding: 3rem 0;
-}
-.contact-container p {
-    max-width: 800px;
-    margin: 0 auto 2rem auto;
-    text-align: center;
-    font-size: 1rem;
-}
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-}
-.form-row {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1rem;
-}
-.form-row label {
-    margin-bottom: 0.25rem;
-    font-weight: 600;
-    color: var(--color-primary);
-}
-.form-row input,
-.form-row textarea {
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-    resize: vertical;
-}
-.form-row input:focus,
-.form-row textarea:focus {
-    outline: none;
-    border-color: var(--color-secondary);
-    box-shadow: 0 0 0 2px rgba(0, 147, 213, 0.2);
-}
-
-/* Small note styling for footnotes or källhänvisningar */
-.small-note {
-    font-size: 0.8rem;
-    color: var(--color-primary);
-    text-align: center;
-    margin-top: 0.5rem;
-}
-.small-note a {
-    color: var(--color-secondary);
-}
-.small-note a:hover {
-    text-decoration: underline;
-}
-
-/* Footer */
-footer {
-    background-color: var(--color-primary);
-    color: white;
-    text-align: center;
-    padding: 1rem 0;
-}
-.footer-container p {
-    margin-bottom: 0.5rem;
-    font-size: 0.85rem;
-}
-
-/* GPT section */
-.gpt-section {
-    background-color: var(--color-light);
-    padding: 3rem 0;
-    text-align: center;
-}
-.gpt-section p {
-    max-width: 800px;
-    margin: 0 auto 1.5rem auto;
-    font-size: 1rem;
-}
-
-/* Resources section */
-.resources {
-    background-color: white;
-    padding: 3rem 0;
-    text-align: center;
-}
-.resources h2 {
-    color: var(--color-primary);
-    margin-bottom: 1rem;
-}
-.resources p {
-    max-width: 800px;
-    margin: 0 auto 1rem auto;
-    font-size: 1rem;
-}
-.resource-list {
-    list-style: none;
-    padding: 0;
-    margin: 1rem auto;
-    max-width: 600px;
-    text-align: left;
-}
-.resource-list li {
-    margin-bottom: 0.5rem;
-}
-.resource-list a {
-    color: var(--color-secondary);
-    font-weight: 600;
-}
-.resource-list a:hover {
-    text-decoration: underline;
-}
-
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2rem;
-    }
-    .nav-menu {
-        gap: 1rem;
-    }
-       #gpt {
-        display: none;
-    }
-
-}
-
-/* Responsive navigation styles */
-.menu-toggle {
-    display: none;
-    font-size: 2rem;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-}
-
-@media (max-width: 768px) {
-    .header-container {
-        position: relative;
-    }
-    .nav-menu {
-        display: none;
-        flex-direction: column;
-        background-color: var(--color-primary);
-        padding: 1rem;
-        position: absolute;
-        right: 0;
-        top: 100%;
-        width: 100%;
-    }
-    .nav-menu.open {
-        display: flex;
-    }
-    .menu-toggle {
-        display: block;
-    }
-}
-
-/* Hide legacy mobile menu elements */
-.hamburger,
-.mobile-links {
-  display: none;
-    /* ========== Tunn nav högst upp ========== */
+/* Slim, sticky menyrad – ~30% av tidigare höjd */
 header {
   background-color: var(--color-primary);
-  color: white;
-  padding: 6px 0;        /* tunn menyrad */
+  color: #fff;
+  padding: 6px 0;            /* tidigare var ~0.15–1rem – nu mycket tunnare */
   position: sticky;
   top: 0;
   z-index: 999;
 }
 
-/* Nav-innehållet */
 .header-container {
   display: flex;
   align-items: center;
-  justify-content: center;  /* centrera länkarna */
+  justify-content: center;   /* centrera länkarna på desktop */
+  gap: 0.75rem;
 }
 
-/* Menylänkar */
+/* Menylänkar (desktop) */
 .nav-menu {
   list-style: none;
   display: flex;
-  gap: 1rem;               /* lite tätare */
+  gap: 1rem;
   margin: 0;
   padding: 0;
 }
+
 .nav-menu a {
-  color: white;
+  color: #fff;
   font-weight: 600;
-  text-decoration: none;
+  line-height: 1;            /* kompakt radavstånd */
+  padding: 8px 6px;          /* tajtare klickyta */
+  transition: opacity .2s;
+}
+.nav-menu a:hover { opacity: .85; }
+
+/* Mobil-toggling – exakt samma interaktion som tidigare */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
 }
 
-/* ========== Friställd logga under nav ========== */
+/* ===========================
+   Fristående brand-bar (logo)
+   =========================== */
+
+/* Den här raden visas ENDAST på desktop.
+   På mobil döljs den (vi använder loggan i headern där i stället). */
 .brand-bar {
-  background: #fff;        /* eller transparent */
+  display: none;                 /* default: dold, aktiveras på desktop nedan */
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+.brand-bar .brand-inner {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 8px 0;
-  border-bottom: 1px solid #eee; /* valfritt */
 }
 .brand-bar .logo {
-  height: 180px;           /* exakt samma som idag */
+  height: 150px;                 /* stor fristående logga under meny */
   width: auto;
 }
 
-/* Mobil: samma toggling som du redan har */
+/* ===========================
+   Hero / sektioner (befintlig design)
+   =========================== */
+
+.hero {
+  background-image: url('hero.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: #fff;
+  padding: 4rem 0;
+  text-align: center;
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,.4);
+}
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+.hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+.hero p  { font-size: 1.2rem; margin-bottom: 2rem; }
+
+.fail-highlight {
+  background-color: var(--color-accent);
+  color: var(--color-dark);
+  padding: .5rem 1rem;
+  text-align: center;
+  font-size: .9rem;
+}
+.fail-highlight strong { font-weight: 700; }
+.fail-highlight span   { font-weight: 400; }
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--color-accent);
+  color: var(--color-dark);
+  padding: .75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  box-shadow: 0 4px 6px rgba(0,0,0,.1);
+  transition: background-color .3s, transform .2s;
+  display: inline-block;
+}
+.btn-primary:hover { background-color: #bfa855; transform: translateY(-2px); }
+
+/* About / Services / GPT / Footer (befintligt) */
+section h2 { font-size: 2rem; margin-bottom: 1rem; color: var(--color-primary); }
+.about { padding: 3rem 0; }
+.about p { max-width: 800px; margin: 0 auto; font-size: 1.1rem; text-align: center; }
+.about .divider { height: 1px; background: #e0e0e0; margin: 2rem auto; max-width: 80%; }
+
+.services { background: #fff; padding: 3rem 0; }
+.service-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 2rem; margin-top: 2rem; }
+.service-item { background: var(--color-light); padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,.05); transition: transform .2s, box-shadow .3s; }
+.service-item h3 { margin-bottom: .5rem; color: var(--color-primary); }
+.service-image { width: 100%; height: 250px; object-fit: cover; border-radius: 6px; }
+
+.gpt-section { background: var(--color-light); padding: 3rem 0; text-align: center; }
+.gpt-section p { max-width: 800px; margin: 0 auto 1.5rem; }
+
+footer { background: var(--color-primary); color: #fff; text-align: center; padding: 1rem 0; }
+.footer-container p { margin-bottom: .5rem; font-size: .85rem; }
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+
+/* Mobil (≤768px): behåll nuvarande beteende
+   - Logga i headern
+   - .brand-bar dold
+   - Hamburger öppnar staplade länkar
+*/
 @media (max-width: 768px) {
-  .header-container { position: relative; }
+  .brand-bar { display: none; }     /* visa inte fristående logga på mobil */
+  .header-container { position: relative; justify-content: space-between; }
+  .menu-toggle { display: block; }
+
   .nav-menu {
     display: none;
     flex-direction: column;
@@ -529,10 +195,16 @@ header {
     width: 100%;
   }
   .nav-menu.open { display: flex; }
-  .menu-toggle { display: block; }
+
+  .hero h1 { font-size: 2rem; }
+  #gpt { display: none; }           /* som du hade i befintlig css */
 }
 
-/* Dölj legacy-element om de skulle råka finnas kvar */
-.hamburger, .mobile-links { display: none; }
-
+/* Desktop (≥769px): 
+   - DÖLJ logo inne i headern
+   - VISA .brand-bar med stor logga under menyraden
+*/
+@media (min-width: 769px) {
+  header .logo-link { display: none; }     /* ta bort logga från menyraden (desktop) */
+  .brand-bar { display: block; }           /* fristående logga direkt under menyn */
 }
