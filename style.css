@@ -470,4 +470,69 @@ footer {
 .hamburger,
 .mobile-links {
   display: none;
+    /* ========== Tunn nav högst upp ========== */
+header {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 6px 0;        /* tunn menyrad */
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+/* Nav-innehållet */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;  /* centrera länkarna */
+}
+
+/* Menylänkar */
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 1rem;               /* lite tätare */
+  margin: 0;
+  padding: 0;
+}
+.nav-menu a {
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* ========== Friställd logga under nav ========== */
+.brand-bar {
+  background: #fff;        /* eller transparent */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee; /* valfritt */
+}
+.brand-bar .logo {
+  height: 180px;           /* exakt samma som idag */
+  width: auto;
+}
+
+/* Mobil: samma toggling som du redan har */
+@media (max-width: 768px) {
+  .header-container { position: relative; }
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background-color: var(--color-primary);
+    padding: 1rem;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    width: 100%;
+  }
+  .nav-menu.open { display: flex; }
+  .menu-toggle { display: block; }
+}
+
+/* Dölj legacy-element om de skulle råka finnas kvar */
+.hamburger, .mobile-links { display: none; }
+
 }
