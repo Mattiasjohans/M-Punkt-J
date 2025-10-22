@@ -1,116 +1,473 @@
-/* M Punkt J – kompakt desktopmeny + fristående logga (mobil oförändrad) */
+/*
+ * M Punkt J – Stylesheet
+ *
+ * Denna fil innehåller alla stilar för webbplatsen. Färger och typografi är
+ * valda för att ge ett professionellt och förtroendeingivande intryck. Layouten
+ * är responsiv och fungerar på både datorer, surfplattor och mobiler.
+ */
 
-/* ======= Variabler & bas ======= */
+/* Färger definierade som CSS‑variabler för enklare justering */
 :root {
-  --color-primary: #2f3d4a;     /* mörk blågrå (header/footer) */
-  --color-secondary: #cbb994;   /* varm beige/guld (brand) */
-  --color-light: #f7f6ef;       /* ljust bakgrundstema */
-  --color-dark: #2a2f36;
-  --color-accent: #d1b864;      /* knappfärg */
-  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    /* Färgpalett inspirerad av M Punkt J:s logo i beige och mörkblå/grå toner */
+    --color-primary: #2f3d4a;      /* Mörk basfärg för header och rubriker (djup blå/grå) */
+    --color-secondary: #cbb994;    /* Sekundär färg i beige/guld för länkar och detaljer */
+    --color-light: #f7f6ef;        /* Ljus bakgrundsfärg med varm ton */
+    --color-dark: #2a2f36;         /* Mörk textfärg för kontrast mot ljusa ytor */
+    --color-accent: #d1b864;       /* Accentfärg i guld/beige för knappar och highlights */
+    --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { height: 100%; }
-body { font-family: var(--font-family); line-height: 1.6; color: var(--color-dark); background: var(--color-light); }
-img { max-width: 100%; height: auto; display: block; }
-a { color: var(--color-secondary); text-decoration: none; }
-a:hover { text-decoration: underline; }
-.container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 1rem 0; }
-
-/* ======= Header / Navigation ======= */
-/* Mobil först – samma beteende som på övriga sidor */
-header { background: var(--color-primary); color: #fff; position: sticky; top: 0; z-index: 999; }
-.header-container { display: flex; align-items: center; justify-content: space-between; }
-.logo { height: 180px; width: auto; } /* som tidigare */
-
-/* Menylista */
-.nav-menu { list-style: none; display: flex; gap: 1.5rem; }
-.nav-menu a { color: #fff; font-weight: 600; transition: opacity .2s; }
-.nav-menu a:hover { opacity: .85; }
-
-/* Mobil: fällmeny */
-.menu-toggle { display: none; font-size: 2rem; background: none; border: 0; color: #fff; cursor: pointer; }
-@media (max-width: 768px) {
-  .header-container { position: relative; }
-  .nav-menu { display: none; flex-direction: column; background: var(--color-primary); padding: 1rem; position: absolute; right: 0; top: 100%; width: 100%; }
-  .nav-menu.open { display: flex; }
-  .menu-toggle { display: block; }
+/* Grundläggande reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-/* Städa bort ev. legacy-element */
-.hamburger, .mobile-links { display: none !important; }
-
-/* ======= Desktop: tunn nav + fristående logga ======= */
-@media (min-width: 769px) {
-  /* Tunnare navrad (~30% av tidigare): mindre padding */
-  header { padding: 6px 0; }
-  .nav-menu { gap: 1rem; }
-  .header-container .logo-link { display: none; } /* döljer loggan i headern på desktop */
-
-  /* Brand-bar precis under menyn med loggan */
-  .brand-bar { display: flex; align-items: center; justify-content: center; background: #fff; padding: 8px 0; border-bottom: 1px solid #eee; }
-  .brand-bar .logo { height: 180px; width: auto; }
-}
-@media (max-width: 768px) {
-  .brand-bar { display: none; } /* visa inte brand-bar på mobil */
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--color-dark);
+    background-color: var(--color-light);
 }
 
-/* ======= Hero ======= */
-/* Använder hero.jpg om den finns; annars visas en solid bakgrundsfärg */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: var(--color-secondary);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* Container helper for consistent widths */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+/* Header styling */
+header {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 0.15rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logotypen ska vara 50 % större än tidigare (120px → 180px) */
+.logo {
+    height: 180px;
+    width: auto;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-menu a {
+    color: white;
+    font-weight: 600;
+    transition: opacity 0.2s;
+}
+.nav-menu a:hover {
+    opacity: 0.8;
+}
+
+/* Hero section */
 .hero {
-  background: var(--color-primary);
-  background-image: url('hero.jpg'); /* byt till rätt filnamn om din bild heter något annat */
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: relative; color: #fff; padding: 4rem 0; text-align: center;
+    /* Use a team collaboration image as the hero background */
+    /* Use hero image from project root */
+    background-image: url('hero.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
 }
-.hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,.35); z-index: 1; }
-.hero-content { max-width: 800px; margin: 0 auto; position: relative; z-index: 2; }
-.hero h1 { font-size: 2.5rem; margin-bottom: .5rem; }
 
-/* Knappar */
+/* Highlight for failure statistic at top of hero */
+.fail-highlight {
+    background-color: var(--color-accent);
+    color: var(--color-dark);
+    padding: 0.5rem 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+.fail-highlight strong {
+    font-weight: 700;
+}
+.fail-highlight span {
+    font-weight: 400;
+}
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Semi‑transparent overlay on hero image to improve text contrast */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* Primary button */
 .btn-primary {
-  background: var(--color-accent); color: var(--color-dark);
-  padding: .75rem 1.5rem; border-radius: 6px; font-weight: 700;
-  box-shadow: 0 4px 6px rgba(0,0,0,.1); transition: background .2s, transform .15s;
-  display: inline-block;
+    background-color: var(--color-accent);
+    color: var(--color-dark);
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+    display: inline-block;
 }
-.btn-primary:hover { background: #bfa855; transform: translateY(-2px); }
+.btn-primary:hover {
+    /* Mörkare variant av accentfärgen vid hover för mer djup */
+    background-color: #bfa855;
+    transform: translateY(-2px);
+}
 
-/* Sektioner (som på dina övriga sidor) */
-section h2 { font-size: 2rem; margin-bottom: 1rem; color: var(--color-primary); }
-.about { padding: 3rem 0; }
-.about p { max-width: 800px; margin: 0 auto; font-size: 1.1rem; text-align: center; }
-.about h2 { font-size: 2rem; color: var(--color-primary); margin-top: 1.5rem; margin-bottom: .5rem; text-align: center; }
-.about h3 { font-size: 1.5rem; color: var(--color-primary); margin-top: 2rem; margin-bottom: .5rem; text-align: center; }
-.about .divider { height: 1px; background: #e0e0e0; margin: 2rem auto; max-width: 80%; }
+/* Section headings */
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+}
 
-.services { background: #fff; padding: 3rem 0; }
-.service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 2rem; margin-top: 2rem; }
-.service-item { background: var(--color-light); padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,.05); transition: transform .2s, box-shadow .3s; }
-.service-item h3 { margin-bottom: .5rem; color: var(--color-primary); }
-.service-image { width: 100%; height: 250px; object-fit: cover; border-radius: 8px; }
+/* About section */
+.about {
+    padding: 3rem 0;
+}
+.about p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    text-align: center;
+}
 
-/* Kontakt */
-.contact { background: #fff; padding: 3rem 0; }
-.contact-form { max-width: 600px; margin: 0 auto; }
-.form-row { display: flex; flex-direction: column; margin-bottom: 1rem; }
-.form-row label { margin-bottom: .25rem; font-weight: 600; color: var(--color-primary); }
-.form-row input, .form-row textarea { padding: .5rem; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem; resize: vertical; }
-.form-row input:focus, .form-row textarea:focus { outline: none; border-color: var(--color-secondary); box-shadow: 0 0 0 2px rgba(203,185,148,.25); }
+/* About page headings */
+.about h2 {
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+.about h3 {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+.about .divider {
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 2rem auto;
+    max-width: 80%;
+}
 
-/* GPT-sektion */
-.gpt-section { background: var(--color-light); padding: 3rem 0; text-align: center; }
-.gpt-section p { max-width: 800px; margin: 0 auto 1.5rem; font-size: 1rem; }
+/* Services section */
+.services {
+    background-color: white;
+    padding: 3rem 0;
+}
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.service-item {
+    background-color: var(--color-light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+.service-item h3 {
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+}
+
+/* Images within service items */
+/* Ensure all service images have the same height and maintain aspect ratio */
+.service-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 0.75rem;
+}
+.service-item p {
+    font-size: 0.95rem;
+}
+.service-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Project leadership section */
+.project-lead {
+    background-color: var(--color-light);
+    padding: 3rem 0;
+}
+
+/* Optional image within project leadership section */
+.project-lead .project-image {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto 1.5rem auto;
+    border-radius: 8px;
+    display: block;
+}
+.project-lead p {
+    max-width: 800px;
+    margin: 0 auto 1rem auto;
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* Education focus section */
+.education-focus {
+    background-color: var(--color-light);
+    padding: 3rem 0;
+    text-align: center;
+}
+.education-focus h2 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+.fact {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+.fact h3 {
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+.fact p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+.fact:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.education-focus p {
+    max-width: 800px;
+    margin: 1.5rem auto;
+    font-size: 1rem;
+}
+
+/* Enlarge key insight paragraphs on the education focus section by 50% */
+.education-focus .lead-text {
+    font-size: 1.5rem;
+    line-height: 1.6;
+}
+
+/* Contact section */
+.contact {
+    background-color: white;
+    padding: 3rem 0;
+}
+.contact-container p {
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+    text-align: center;
+    font-size: 1rem;
+}
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+.form-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+.form-row label {
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+.form-row input,
+.form-row textarea {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    resize: vertical;
+}
+.form-row input:focus,
+.form-row textarea:focus {
+    outline: none;
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 2px rgba(0, 147, 213, 0.2);
+}
+
+/* Small note styling for footnotes or källhänvisningar */
+.small-note {
+    font-size: 0.8rem;
+    color: var(--color-primary);
+    text-align: center;
+    margin-top: 0.5rem;
+}
+.small-note a {
+    color: var(--color-secondary);
+}
+.small-note a:hover {
+    text-decoration: underline;
+}
 
 /* Footer */
-footer { background: var(--color-primary); color: #fff; text-align: center; padding: 1rem 0; }
-.footer-container p { margin-bottom: .5rem; font-size: .9rem; }
+footer {
+    background-color: var(--color-primary);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+.footer-container p {
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+}
 
-/* Småskärmjusteringar */
+/* GPT section */
+.gpt-section {
+    background-color: var(--color-light);
+    padding: 3rem 0;
+    text-align: center;
+}
+.gpt-section p {
+    max-width: 800px;
+    margin: 0 auto 1.5rem auto;
+    font-size: 1rem;
+}
+
+/* Resources section */
+.resources {
+    background-color: white;
+    padding: 3rem 0;
+    text-align: center;
+}
+.resources h2 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+}
+.resources p {
+    max-width: 800px;
+    margin: 0 auto 1rem auto;
+    font-size: 1rem;
+}
+.resource-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem auto;
+    max-width: 600px;
+    text-align: left;
+}
+.resource-list li {
+    margin-bottom: 0.5rem;
+}
+.resource-list a {
+    color: var(--color-secondary);
+    font-weight: 600;
+}
+.resource-list a:hover {
+    text-decoration: underline;
+}
+
 @media (max-width: 768px) {
-  .hero h1 { font-size: 2rem; }
-  .nav-menu { gap: 1rem; }
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .nav-menu {
+        gap: 1rem;
+    }
+       #gpt {
+        display: none;
+    }
+
+}
+
+/* Responsive navigation styles */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        position: relative;
+    }
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        background-color: var(--color-primary);
+        padding: 1rem;
+        position: absolute;
+        right: 0;
+        top: 100%;
+        width: 100%;
+    }
+    .nav-menu.open {
+        display: flex;
+    }
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* Hide legacy mobile menu elements */
+.hamburger,
+.mobile-links {
+  display: none;
 }
