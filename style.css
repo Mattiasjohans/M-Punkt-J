@@ -1,210 +1,82 @@
-/* ===========================
-   M PUNKT J – Global Styles
-   =========================== */
-
-:root {
-  --color-primary: #2f3d4a;
-  --color-secondary: #cbb994;
-  --color-light: #f7f6ef;
-  --color-dark: #2a2f36;
-  --color-accent: #d1b864;
-  --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+/*
+.nav-menu { display: none; flex-direction: column; background: var(--color-primary); padding: 1rem; position: absolute; right: 0; top: 100%; width: 100%; }
+.nav-menu.open { display: flex; }
+.menu-toggle { display: block; }
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
 
-body {
-  font-family: var(--font-family);
-  line-height: 1.6;
-  color: var(--color-dark);
-  background-color: var(--color-light);
+/* Dölj legacy‑element om de finns kvar */
+.hamburger, .mobile-links { display: none; }
+
+
+/* ======= Desktop: tunn nav + fristående logga ======= */
+@media (min-width: 769px) {
+/* Tunnare navrad (~30% av tidigare): mindre vertikal padding, normal textstorlek */
+header { padding: 6px 0; }
+.nav-menu { gap: 1rem; }
+.header-container .logo-link { display: none; } /* logga i header döljs på desktop */
+
+
+/* Brand‑bar: separat rad under menyn med loggan */
+.brand-bar { display: flex; align-items: center; justify-content: center; background: #fff; padding: 8px 0; border-bottom: 1px solid #eee; }
+.brand-bar .logo { height: 180px; width: auto; }
+}
+@media (max-width: 768px) {
+.brand-bar { display: none; } /* visa inte brand‑bar på mobil */
 }
 
-img { max-width: 100%; height: auto; display: block; }
 
-a { color: var(--color-secondary); text-decoration: none; }
-a:hover { text-decoration: underline; }
-
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem 0;
-}
-
-/* ===========================
-   Header / Nav
-   =========================== */
-
-/* Slim, sticky menyrad – ~30% av tidigare höjd */
-header {
-  background-color: var(--color-primary);
-  color: #fff;
-  padding: 6px 0;            /* tidigare var ~0.15–1rem – nu mycket tunnare */
-  position: sticky;
-  top: 0;
-  z-index: 999;
-}
-
-.header-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;   /* centrera länkarna på desktop */
-  gap: 0.75rem;
-}
-
-/* Menylänkar (desktop) */
-.nav-menu {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-menu a {
-  color: #fff;
-  font-weight: 600;
-  line-height: 1;            /* kompakt radavstånd */
-  padding: 8px 6px;          /* tajtare klickyta */
-  transition: opacity .2s;
-}
-.nav-menu a:hover { opacity: .85; }
-
-/* Mobil-toggling – exakt samma interaktion som tidigare */
-.menu-toggle {
-  display: none;
-  font-size: 2rem;
-  background: none;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-}
-
-/* ===========================
-   Fristående brand-bar (logo)
-   =========================== */
-
-/* Den här raden visas ENDAST på desktop.
-   På mobil döljs den (vi använder loggan i headern där i stället). */
-.brand-bar {
-  display: none;                 /* default: dold, aktiveras på desktop nedan */
-  background: #fff;
-  border-bottom: 1px solid #eee;
-}
-.brand-bar .brand-inner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px 0;
-}
-.brand-bar .logo {
-  height: 150px;                 /* stor fristående logga under meny */
-  width: auto;
-}
-
-/* ===========================
-   Hero / sektioner (befintlig design)
-   =========================== */
-
-.hero {
-  background-image: url('hero.jpg');
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  color: #fff;
-  padding: 4rem 0;
-  text-align: center;
-}
-.hero-overlay {
-  position: absolute; inset: 0;
-  background: rgba(0,0,0,.4);
-}
-.hero-content {
-  max-width: 800px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 2;
-}
-.hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
-.hero p  { font-size: 1.2rem; margin-bottom: 2rem; }
-
-.fail-highlight {
-  background-color: var(--color-accent);
-  color: var(--color-dark);
-  padding: .5rem 1rem;
-  text-align: center;
-  font-size: .9rem;
-}
+/* ======= Hero ======= */
+.hero { background: url('hero.jpg') center/cover no-repeat; position: relative; color: #fff; padding: 4rem 0; text-align: center; }
+.hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,.4); z-index: 1; }
+.hero-content { max-width: 800px; margin: 0 auto; position: relative; z-index: 2; }
+.fail-highlight { background: var(--color-accent); color: var(--color-dark); padding: .5rem 1rem; text-align: center; font-size: .9rem; }
 .fail-highlight strong { font-weight: 700; }
-.fail-highlight span   { font-weight: 400; }
 
-/* Buttons */
-.btn-primary {
-  background-color: var(--color-accent);
-  color: var(--color-dark);
-  padding: .75rem 1.5rem;
-  border-radius: 4px;
-  font-weight: 600;
-  box-shadow: 0 4px 6px rgba(0,0,0,.1);
-  transition: background-color .3s, transform .2s;
-  display: inline-block;
-}
-.btn-primary:hover { background-color: #bfa855; transform: translateY(-2px); }
 
-/* About / Services / GPT / Footer (befintligt) */
+/* Knappar */
+.btn-primary { background: var(--color-accent); color: var(--color-dark); padding: .75rem 1.5rem; border-radius: 4px; font-weight: 600; box-shadow: 0 4px 6px rgba(0,0,0,.1); transition: background .3s, transform .2s; display: inline-block; }
+.btn-primary:hover { background: #bfa855; transform: translateY(-2px); }
+
+
+/* Sektioner och innehåll (oförändrat från tidigare) */
 section h2 { font-size: 2rem; margin-bottom: 1rem; color: var(--color-primary); }
 .about { padding: 3rem 0; }
 .about p { max-width: 800px; margin: 0 auto; font-size: 1.1rem; text-align: center; }
+.about h2 { font-size: 2rem; color: var(--color-primary); margin-top: 1.5rem; margin-bottom: .5rem; text-align: center; }
+.about h3 { font-size: 1.5rem; color: var(--color-primary); margin-top: 2rem; margin-bottom: .5rem; text-align: center; }
 .about .divider { height: 1px; background: #e0e0e0; margin: 2rem auto; max-width: 80%; }
 
+
 .services { background: #fff; padding: 3rem 0; }
-.service-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 2rem; margin-top: 2rem; }
+.service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 2rem; margin-top: 2rem; }
 .service-item { background: var(--color-light); padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,.05); transition: transform .2s, box-shadow .3s; }
 .service-item h3 { margin-bottom: .5rem; color: var(--color-primary); }
-.service-image { width: 100%; height: 250px; object-fit: cover; border-radius: 6px; }
+.service-image { width: 100%; height: 250px; object-fit: cover; border-radius: 8px; }
 
+
+/* Kontakt */
+.contact { background: #fff; padding: 3rem 0; }
+.contact-form { max-width: 600px; margin: 0 auto; }
+.form-row { display: flex; flex-direction: column; margin-bottom: 1rem; }
+.form-row label { margin-bottom: .25rem; font-weight: 600; color: var(--color-primary); }
+.form-row input, .form-row textarea { padding: .5rem; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; resize: vertical; }
+.form-row input:focus, .form-row textarea:focus { outline: none; border-color: var(--color-secondary); box-shadow: 0 0 0 2px rgba(0,147,213,.2); }
+
+
+/* GPT‑sektion */
 .gpt-section { background: var(--color-light); padding: 3rem 0; text-align: center; }
-.gpt-section p { max-width: 800px; margin: 0 auto 1.5rem; }
+.gpt-section p { max-width: 800px; margin: 0 auto 1.5rem; font-size: 1rem; }
 
+
+/* Footer */
 footer { background: var(--color-primary); color: #fff; text-align: center; padding: 1rem 0; }
 .footer-container p { margin-bottom: .5rem; font-size: .85rem; }
 
-/* ===========================
-   RESPONSIVE
-   =========================== */
 
-/* Mobil (≤768px): behåll nuvarande beteende
-   - Logga i headern
-   - .brand-bar dold
-   - Hamburger öppnar staplade länkar
-*/
+/* Småskärmjusteringar */
 @media (max-width: 768px) {
-  .brand-bar { display: none; }     /* visa inte fristående logga på mobil */
-  .header-container { position: relative; justify-content: space-between; }
-  .menu-toggle { display: block; }
-
-  .nav-menu {
-    display: none;
-    flex-direction: column;
-    background-color: var(--color-primary);
-    padding: 1rem;
-    position: absolute;
-    right: 0;
-    top: 100%;
-    width: 100%;
-  }
-  .nav-menu.open { display: flex; }
-
-  .hero h1 { font-size: 2rem; }
-  #gpt { display: none; }           /* som du hade i befintlig css */
-}
-
-/* Desktop (≥769px): 
-   - DÖLJ logo inne i headern
-   - VISA .brand-bar med stor logga under menyraden
-*/
-@media (min-width: 769px) {
-  header .logo-link { display: none; }     /* ta bort logga från menyraden (desktop) */
-  .brand-bar { display: block; }           /* fristående logga direkt under menyn */
+.hero h1 { font-size: 2rem; }
+.nav-menu { gap: 1rem; }
+#gpt { display: none; }
 }
