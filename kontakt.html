@@ -100,13 +100,27 @@
         </div>
     </footer>
     <!-- Navigation toggle script -->
-    <script>
-    function toggleMenu() {
-      const mobileLinks = document.querySelector('.mobile-links');
-      if (mobileLinks) {
-        mobileLinks.classList.toggle('active');
-      }
-    }
-    </script>
+ <!-- Navigation toggle for mobile -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu   = document.querySelector('.nav-menu');
+    if (!menuToggle || !navMenu) return;
+
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+      const isOpen = navMenu.classList.contains('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    // Valfritt: stäng menyn när man klickar en länk
+    navMenu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  });
+</script>
 </body>
 </html>
