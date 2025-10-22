@@ -51,85 +51,45 @@ a:hover {
     max-width: 1200px;
     margin: 0 auto;
     padding: 1rem 0;
-/* ======= Header & Navigation ======= */
+}
+
+/* Header styling */
 header {
     background-color: var(--color-primary);
     color: white;
-    padding: 0.05rem 0;   /* bara några millimeter ovan/under loggan */
+    padding: 0.15rem 0;
     position: sticky;
     top: 0;
     z-index: 999;
 }
 
-/* Layout: logga till vänster, meny till höger */
 .header-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-/* Logotypen – oförändrad storlek */
+/* Logotypen ska vara 50 % större än tidigare (120px → 180px) */
 .logo {
     height: 180px;
     width: auto;
-    margin: 3px 0;        /* lite luft ovan/under så den inte klipps */
 }
 
-/* Navigation */
 .nav-menu {
     list-style: none;
     display: flex;
     gap: 1.5rem;
-    margin: 0;
-    padding: 0;
 }
 
 .nav-menu a {
     color: white;
     font-weight: 600;
-    text-decoration: none;
     transition: opacity 0.2s;
 }
-
 .nav-menu a:hover {
     opacity: 0.8;
 }
 
-/* Mobilmenyknapp (hamburger) */
-.menu-toggle {
-    display: none;
-    font-size: 2rem;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-}
-
-/* ======= Responsivitet ======= */
-@media (max-width: 768px) {
-    .header-container {
-        position: relative;
-    }
-
-    .nav-menu {
-        display: none;
-        flex-direction: column;
-        background-color: var(--color-primary);
-        padding: 1rem;
-        position: absolute;
-        right: 0;
-        top: 100%;
-        width: 100%;
-    }
-
-    .nav-menu.open {
-        display: flex;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-}
 /* Hero section */
 .hero {
     /* Use a team collaboration image as the hero background */
