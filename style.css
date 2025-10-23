@@ -57,7 +57,7 @@ a:hover {
 header {
     background-color: var(--color-primary);
     color: white;
-    padding: 0.15rem 0;
+    padding: 0.05rem 0;
     position: sticky;
     top: 0;
     z-index: 999;
@@ -71,14 +71,14 @@ header {
 
 /* Logotypen ska vara 50 % större än tidigare (120px → 180px) */
 .logo {
-    height: 120px;
+    height: 80px;
     width: auto;
 }
 
 .nav-menu {
     list-style: none;
     display: flex;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
 .nav-menu a {
