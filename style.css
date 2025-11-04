@@ -1,5 +1,5 @@
 /*
- * M Punkt J – Stylesheet
+ * M Punkt J – Stylesheet
  *
  * Denna fil innehåller alla stilar för webbplatsen. Färger och typografi är
  * valda för att ge ett professionellt och förtroendeingivande intryck. Layouten
@@ -8,7 +8,7 @@
 
 /* Färger definierade som CSS‑variabler för enklare justering */
 :root {
-    /* Färgpalett inspirerad av M Punkt J:s logo i beige och mörkblå/grå toner */
+    /* Färgpalett inspirerad av M Punkt J:s logo i beige och mörkblå/grå toner */
     --color-primary: #2f3d4a;      /* Mörk basfärg för header och rubriker (djup blå/grå) */
     --color-secondary: #cbb994;    /* Sekundär färg i beige/guld för länkar och detaljer */
     --color-light: #f7f6ef;        /* Ljus bakgrundsfärg med varm ton */
@@ -69,7 +69,7 @@ header {
     justify-content: space-between;
 }
 
-/* Logotypen ska vara 50 % större än tidigare (120px → 180px) */
+/* Logotypen ska vara 50 % större än tidigare (120px → 180px) */
 .logo {
     height: 80px;
     width: auto;
@@ -104,8 +104,9 @@ header {
 }
 
 /* Highlight for failure statistic at top of hero */
+/* UPPDATERAD: Nu använder samma färg som knappen "Boka möte" */
 .fail-highlight {
-    background-color: var(--color-accent);
+    background-color: #d1b864;  /* Samma färg som btn-primary */
     color: var(--color-dark);
     padding: 0.5rem 1rem;
     text-align: center;
@@ -144,8 +145,9 @@ header {
 }
 
 /* Primary button */
+/* BEKRÄFTAD: Använder samma färg #d1b864 som fail-highlight */
 .btn-primary {
-    background-color: var(--color-accent);
+    background-color: #d1b864;  /* Samma färg som fail-highlight */
     color: var(--color-dark);
     padding: 0.75rem 1.5rem;
     border-radius: 4px;
@@ -473,3 +475,4 @@ footer {
 .mobile-links {
   display: none;
 }
+
