@@ -15,15 +15,19 @@
 <body>
     <header>
         <div class="container header-container">
-            <a href="index.html" class="logo-link" title="Till startsidan">
+    
+       
+<a href="index.html" class="logo-link" title="Till startsidan">
                 <img src="logo.png" alt="M Punkt J logo" class="logo">
             </a>
-            <button class="menu-toggle" aria-label="Öppna navigation" aria-expanded="false">&#9776;</button>
-            <nav>
+     
+                <button class="menu-toggle" aria-label="\u00d6ppna navigation" aria-expanded="false">&#9776;</button>
+<nav>
                 <ul class="nav-menu">
                     <li><a href="om.html" class="active">Om oss</a></li>
                     <li><a href="tjanster.html">Tjänster</a></li>
                     <li><a href="varfor-utbildning.html">Varför utbildning?</a></li>
+                    <!-- Removed Projektledning link -->
                     <!-- GPT link: assign a class for responsive hiding on small screens -->
                     <li class="gpt-link"><a href="https://chat.openai.com/g/g-68e21dac1fb88191a2dbba21d73a6b41-m-punkt-j-gpt">M Punkt J GPT</a></li>
                     <li><a href="kontakt.html">Kontakt</a></li>
@@ -94,8 +98,7 @@
             </p>
         </div>
     </footer>
-
-    <!-- Navigation toggle scripts -->
+    <!-- Navigation toggle script -->
     <script>
     function toggleMenu() {
       const mobileLinks = document.querySelector('.mobile-links');
@@ -104,7 +107,8 @@
       }
     }
     </script>
-    <script>
+</script>
+        <script>
       const menuToggle = document.querySelector('.menu-toggle');
       const navMenu = document.querySelector('.nav-menu');
       menuToggle.addEventListener('click', () => {
