@@ -15,15 +15,19 @@
 <body>
     <header>
         <div class="container header-container">
-            <a href="index.html" class="logo-link" title="Till startsidan">
+                <a href="index.html" class="logo-link" title="Till startsidan">
+           
                 <img src="logo.png" alt="M Punkt J logo" class="logo">
+
+            
             </a>
-            <button class="menu-toggle" aria-label="Öppna navigation" aria-expanded="false">&#9776;</button>
+                    <button class="menu-toggle" aria-label="Öppna navigation" aria-expanded="false">&#9776;</button>
             <nav>
                 <ul class="nav-menu">
                     <li><a href="om.html">Om oss</a></li>
                     <li><a href="tjanster.html" class="active">Tjänster</a></li>
                     <li><a href="varfor-utbildning.html">Varför utbildning?</a></li>
+                    <!-- Removed Projektledning link: content moved under Tjänster -->
                     <!-- GPT link: assign a class for responsive hiding on small screens -->
                     <li class="gpt-link"><a href="https://chat.openai.com/g/g-68e21dac1fb88191a2dbba21d73a6b41-m-punkt-j-gpt">M Punkt J GPT</a></li>
                     <li><a href="kontakt.html">Kontakt</a></li>
@@ -58,9 +62,13 @@
             <div class="service-grid">
                 <div class="service-item">
                     <h3>Utbildningar &amp; Workshops</h3>
-                    <img src="training.jpg" alt="AI utbildning" class="service-image">
+                    <img src="training.jpg" alt="AI utbildning i Västsverige" class="service-image">
                     <p>
-                        Utbildning är ofta det första steget för att organisationer ska våga och kunna driva sin AI‑utveckling själva. Vi erbjuder inspirerande och pedagogiska AI‑utbildningar. Vi arrangerar utbildning i ChatGPT, Claude, Perplexity, Grok och andra generativa verktyg, från grundläggande förståelse av LLM till avancerad frågeteknik och prompt‑design. Målet är att era medarbetare ska bli trygga i att använda AI som verktyg och börja se nya möjligheter i sina arbetsuppgifter.
+                        Utbildning är ofta det första steget för att organisationer ska våga och kunna driva sin AI‑utveckling själva. Vi
+                        erbjuder inspirerande och pedagogiska AI‑utbildningar i Västsverige. Vi arrangerar både ChatGPT utbildning Västsverige och
+                        Grok utbildning Västsverige, från grundläggande förståelse av LLM som ChatGPT 5 och Grok till avancerad
+                        frågeteknik och prompt‑design. Målet är att era medarbetare ska bli trygga i att använda AI som verktyg och
+                        börja se nya möjligheter i sina arbetsuppgifter.
                     </p>
                 </div>
                 <div class="service-item">
@@ -89,7 +97,7 @@
         </div>
     </section>
 
-    <!-- Project leadership content -->
+    <!-- Project leadership content (moved from projektledning.html) -->
     <section class="project-lead">
         <div class="container">
             <h2>Projektledning på er AI‑resa</h2>
@@ -111,6 +119,17 @@
         </div>
     </section>
 
+    <!-- Navigation toggle script -->
+  <script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+  menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('open');
+    const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', !expanded);
+  });
+</script>
+
     <footer>
         <div class="container footer-container">
             <p>&copy; 2025 M Punkt J. Alla rättigheter förbehållna.</p>
@@ -121,24 +140,5 @@
             </p>
         </div>
     </footer>
-
-    <!-- Navigation toggle scripts -->
-    <script>
-    function toggleMenu() {
-      const mobileLinks = document.querySelector('.mobile-links');
-      if (mobileLinks) {
-        mobileLinks.classList.toggle('active');
-      }
-    }
-    </script>
-    <script>
-      const menuToggle = document.querySelector('.menu-toggle');
-      const navMenu = document.querySelector('.nav-menu');
-      menuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('open');
-        const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
-        menuToggle.setAttribute('aria-expanded', !expanded);
-      });
-    </script>
 </body>
 </html>
