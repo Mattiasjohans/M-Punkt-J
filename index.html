@@ -67,9 +67,16 @@
     <section class="hero">
         <!-- Highlight research finding about failure rate -->
         <div class="fail-highlight">
-            <p>
-                <strong>Visste du att 95 % av generativa AI initiativ misslyckas med att skapa mätbar affärseffekt?</strong><br>
-                <span>Källa: MIT – The GenAI Divide 2025</span>
+            <!--
+            Reworked the highlight markup to reduce line breaks and provide clearer
+            semantic grouping. A single paragraph contains the question, the
+            statistic and the source citation. Each element is separated into
+            its own span to allow more precise styling and responsive wrapping.
+            -->
+            <p class="fail-text">
+                <span class="question"><strong>Visste du att</strong></span>
+                <span class="statistic">95 % av generativa AI‑initiativ misslyckas med att skapa mätbar affärseffekt?</span>
+                <span class="source">Källa: MIT – The GenAI Divide 2025</span>
             </p>
         </div>
         <div class="hero-overlay"></div>
