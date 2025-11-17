@@ -33,6 +33,7 @@ body {
 
 img {
     max-width: 100%;
+ 
     height: auto;
     display: block;
 }
@@ -69,6 +70,7 @@ header {
     justify-content: space-between;
 }
 
+
 /* Logotypen ska vara 50 % större än tidigare (120px → 180px) */
 .logo {
     height: 80px;
@@ -104,6 +106,7 @@ header {
 }
 
 /* Highlight for failure statistic at top of hero */
+
 /* UPPDATERAD: Nu använder samma färg som knappen "Boka möte" */
 .fail-highlight {
     background-color: #d1b864;  /* Samma färg som btn-primary */
@@ -139,7 +142,9 @@ header {
     font-size: 2.5rem;
     margin-bottom: 1rem;
 }
-.hero p {
+.
+
+hero p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
 }
@@ -474,4 +479,9 @@ footer {
 .hamburger,
 .mobile-links {
   display: none;
+}
+
+/* Reduce font size for education focus paragraphs */
+.education-focus p {
+    font-size: 0.8rem;
 }
