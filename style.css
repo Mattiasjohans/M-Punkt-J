@@ -485,3 +485,8 @@ footer {
 .education-focus p {
     font-size: 0.8rem;
 }
+
+/* Reduce size of lead-text paragraphs by 30% */
+.education-focus .lead-text {
+    font-size: 1.05rem;
+}
