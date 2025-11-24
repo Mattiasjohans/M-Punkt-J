@@ -490,3 +490,9 @@ footer {
 .education-focus .lead-text {
     font-size: 1.05rem;
 }
+
+/* Increase base font size for the homepage text by 20% */
+html {
+    font-size: 120%;
+}
+
