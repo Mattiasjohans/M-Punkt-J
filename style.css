@@ -167,6 +167,12 @@ hero p {
     transform: translateY(-2px);
 }
 
+
+/* Extra spacing for the hero call-to-action button */
+.hero-content .btn-primary {
+    margin-top: 2rem;
+}
+
 /* Section headings */
 section h2 {
     font-size: 2rem;
