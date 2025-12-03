@@ -35,17 +35,34 @@
     </header>
 
     <!-- Video section - First thing visitors see below the menu -->
-    <section class="video-intro">
+    <section class="video-intro" id="video-section">
         <div class="video-container">
             <iframe 
                 src="https://www.youtube.com/embed/BqFc4SOm14g?rel=0&modestbranding=1" 
                 title="M Punkt J - Introduktion" 
                 frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                loading="lazy"
                 allowfullscreen>
             </iframe>
         </div>
     </section>
+
+    <!-- Script för att förhindra auto-scroll när video klickas -->
+    <script>
+    (function() {
+        let scrollPos = 0;
+        const videoSection = document.getElementById('video-section');
+        if (videoSection) {
+            videoSection.addEventListener('click', function() {
+                scrollPos = window.scrollY;
+                setTimeout(function() {
+                    window.scrollTo(0, scrollPos);
+                }, 0);
+            });
+        }
+    })();
+    </script>
 
     <!-- Hero section with background image of team collaboration -->
     <section class="hero">

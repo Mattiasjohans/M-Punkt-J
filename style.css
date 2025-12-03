@@ -98,6 +98,8 @@ header {
 .video-intro {
     background-color: var(--color-primary);
     padding: 2rem 0;
+    /* Förhindra auto-scroll vid fokus */
+    scroll-margin-top: 0;
 }
 
 .video-container {
@@ -119,6 +121,17 @@ header {
     width: 100%;
     height: 100%;
     border-radius: 8px;
+}
+
+/* Förhindra att sidan scrollar när video-iframe får fokus */
+.video-container iframe:focus {
+    outline: none;
+}
+
+/* Wrapper för att förhindra scroll-jump */
+.video-wrapper {
+    overflow: hidden;
+    position: relative;
 }
 
 /* Responsiv video för mobil */
