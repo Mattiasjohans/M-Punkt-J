@@ -98,8 +98,6 @@ header {
 .video-intro {
     background-color: var(--color-primary);
     padding: 2rem 0;
-    /* Förhindra auto-scroll vid fokus */
-    scroll-margin-top: 0;
 }
 
 .video-container {
@@ -112,6 +110,7 @@ header {
     overflow: hidden;
     border-radius: 8px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    background-color: #000;
 }
 
 .video-container iframe {
@@ -123,15 +122,47 @@ header {
     border-radius: 8px;
 }
 
-/* Förhindra att sidan scrollar när video-iframe får fokus */
-.video-container iframe:focus {
-    outline: none;
+/* Video overlay - klickbar thumbnail som startar videon */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
-/* Wrapper för att förhindra scroll-jump */
-.video-wrapper {
-    overflow: hidden;
+.video-thumbnail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.play-button {
     position: relative;
+    z-index: 11;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.2s ease;
+}
+
+.play-button:hover {
+    transform: scale(1.1);
+}
+
+.video-overlay:hover .play-button {
+    transform: scale(1.1);
 }
 
 /* Responsiv video för mobil */
